@@ -1,0 +1,9 @@
+body {
+  font-family: Inter, sans-serif;
+  min-width: 320px;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: #051D3B;
+  color: #ffffff;
+}
+
