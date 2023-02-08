@@ -10,10 +10,10 @@ export const CodeEditor = styled.div`
   .postWrapper {
     padding: 32px;
     border-radius: 8px;
-    background-color: #6bd1ff;
   }
 
   .post {
+    resize: none;
     border-style: none;
     border-end-start-radius: 8px;
     border-end-end-radius: 8px;

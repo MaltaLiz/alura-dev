@@ -31,7 +31,9 @@ export const Header = styled.header`
 
   ${theme.breakpoint.notebook} {
     .userName {
-      display: block;
+      display: flex;
+      align-items: center;
+      gap: 8px;
       margin: 0;
       ${theme.typography.body}
     }

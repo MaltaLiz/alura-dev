@@ -7,3 +7,10 @@ body {
   color: #ffffff;
 }
 
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}

@@ -1,1 +1,7 @@
-export { FaBars as MenuIcon } from 'react-icons/fa'
+export {
+  FaBars as MenuIcon,
+  FaUserCircle as UserIcon,
+  FaTimes as CancelIcon,
+  FaCode as CodeIcon,
+  FaUsers as ComunityIcon,
+} from 'react-icons/fa'

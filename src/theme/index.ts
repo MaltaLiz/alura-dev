@@ -12,6 +12,7 @@ export const theme = {
     blue300: '#5081FB',
     darkBlue: '#051D3B',
     input: 'rgba(255, 255, 255, 0.16)',
+    inputHover: 'rgba(255, 255, 255, 0.24)',
   },
   shadow: {
     backgroud: '#C4C4C4',
@@ -46,6 +47,16 @@ export const theme = {
       background: {
         hover: 'rgba(80, 129, 251, 0.08)',
         pressed: 'rgba(80, 129, 251, 0.16)',
+      },
+    },
+    filled: {
+      background: {
+        normal: '#5081FB',
+        hover: '#7BA4FC',
+        focus: '#96B9FD',
+      },
+      border: {
+        pressed: 'border: 4px solid rgba(80, 129, 251, 0.72);',
       },
     },
   },

@@ -3,14 +3,16 @@ import theme from 'theme'
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 2.7fr 1fr;
+  grid-column-gap: 40px;
 
-  .hide {
-    display: none;
+  .show {
+    display: block;
   }
 
   ${theme.breakpoint.mobile} {
     padding: 27px 16px;
+    position: relative;
   }
 
   ${theme.breakpoint.notebook} {
