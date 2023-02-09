@@ -1,16 +1,7 @@
 import React, { useRef, useState } from 'react'
-import logo from 'assets/images/logo.svg'
 import macButtons from 'assets/images/mac_buttons.svg'
-import {
-  CancelIcon,
-  CodeIcon,
-  ComunityIcon,
-  MenuIcon,
-  UserIcon,
-} from 'utils/icons'
 import * as S from './styles'
-import theme from 'theme'
-import { Link } from 'react-router-dom'
+import { Header, Menu } from 'components'
 
 export default function CodeEditor() {
   const [codeBackground, setCodeBackground] = useState('#6bd1ff')
@@ -33,49 +24,8 @@ export default function CodeEditor() {
 
   return (
     <S.Container>
-      <S.Header>
-        <img alt='Alura Dev' src={logo} width={145} />
-        <div className='userName'>
-          <UserIcon size={32} color={theme.colors.white} />
-          <p>Usuário</p>
-        </div>
-        <button className='menuButton' onClick={handleMenu}>
-          {!showingMenu ? (
-            <MenuIcon size={24} color={theme.colors.white} />
-          ) : (
-            <CancelIcon size={24} color={theme.colors.white} />
-          )}
-        </button>
-      </S.Header>
-      <S.Menu className='menu' ref={navRef}>
-        <p className='menuLabel'>Menu</p>
-        <ul className='menuList'>
-          <li>
-            <Link to='' className='menuItem menuLink'>
-              <CodeIcon
-                size={20}
-                color={theme.colors.white}
-                className='menuIcon--active'
-              />
-              <p> Editor de código</p>
-            </Link>
-          </li>
-          <li>
-            <Link to='' className='menuItem menuLink'>
-              <ComunityIcon
-                size={20}
-                color={theme.colors.white}
-                className='menuIcon'
-              />
-              <p>Comunidade</p>
-            </Link>
-          </li>
-        </ul>
-        <div className='userName'>
-          <UserIcon size={32} color={theme.colors.white} />
-          <p>Usuário</p>
-        </div>
-      </S.Menu>
+      <Header handleMenu={handleMenu} showingMenu={showingMenu} />
+      <Menu ref={navRef} />
       <S.CodeEditor>
         <div
           className='postWrapper'
