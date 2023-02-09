@@ -65,6 +65,11 @@ export const CodeEditor = styled.div`
   }
 
   ${theme.breakpoint.notebook} {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  ${theme.breakpoint.desktop} {
     grid-column-start: 2;
     grid-column-end: 3;
   }

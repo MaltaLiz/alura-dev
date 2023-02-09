@@ -30,7 +30,7 @@ export const theme = {
     mobile: '@media (min-width: 0px)',
     tablet: '@media (min-width: 481px)',
     notebook: '@media (min-width: 769px)',
-    desktop: '@media (min-width: 1025px)',
+    desktop: '@media (min-width: 1200px)',
   },
   buttons: {
     outlined: {

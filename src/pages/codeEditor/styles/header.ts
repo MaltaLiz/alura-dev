@@ -29,7 +29,7 @@ export const Header = styled.header`
     }
   }
 
-  ${theme.breakpoint.notebook} {
+  ${theme.breakpoint.desktop} {
     .userName {
       display: flex;
       align-items: center;

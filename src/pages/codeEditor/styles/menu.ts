@@ -2,11 +2,6 @@ import styled from 'styled-components'
 import theme from 'theme'
 
 export const Menu = styled.nav`
-  .menuLabel {
-    ${theme.typography.sidebarTitle}
-    margin: 0;
-    margin-bottom: 16px;
-  }
   .menuList {
     display: flex;
     flex-direction: column;
@@ -60,6 +55,9 @@ export const Menu = styled.nav`
   }
 
   ${theme.breakpoint.mobile} {
+    .menuLabel {
+      display: none;
+    }
     grid-column-start: 3;
     grid-column-end: 4;
     background-color: #2d415b;
@@ -87,7 +85,13 @@ export const Menu = styled.nav`
     }
   }
 
-  ${theme.breakpoint.notebook} {
+  ${theme.breakpoint.desktop} {
+    .menuLabel {
+      display: block;
+      ${theme.typography.sidebarTitle}
+      margin: 0;
+      margin-bottom: 16px;
+    }
     grid-column-start: 1;
     grid-column-end: 2;
     margin-top: 16px;
