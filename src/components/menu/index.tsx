@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef, Ref, useImperativeHandle, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import theme from 'theme'
 import { CodeIcon, ComunityIcon, UserIcon } from 'utils/icons'
@@ -10,9 +10,27 @@ interface MenuProps
     HTMLElement
   > {}
 
-export default function Menu({ className }: MenuProps) {
+export interface MenuRef {
+  show: () => void
+  hide: () => void
+}
+
+function Menu({ className }: MenuProps, ref: Ref<MenuRef>) {
+  const navRef = useRef<HTMLElement | null>(null)
+  function show() {
+    navRef.current?.classList.add('show')
+  }
+  function hide() {
+    navRef.current?.classList.remove('show')
+  }
+
+  useImperativeHandle(ref, () => ({
+    show,
+    hide,
+  }))
+
   return (
-    <S.Menu className={className}>
+    <S.Menu className={className} ref={navRef}>
       <p className='menuLabel'>Menu</p>
       <ul className='menuList'>
         <li>
@@ -43,3 +61,7 @@ export default function Menu({ className }: MenuProps) {
     </S.Menu>
   )
 }
+
+const MyMenu = forwardRef(Menu)
+
+export default MyMenu

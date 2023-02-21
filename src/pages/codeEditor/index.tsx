@@ -2,11 +2,12 @@ import React, { useRef, useState } from 'react'
 import macButtons from 'assets/images/mac_buttons.svg'
 import * as S from './styles'
 import { Header, Menu } from 'components'
+import { MenuRef } from 'components/menu'
 
 export default function CodeEditor() {
   const [codeBackground, setCodeBackground] = useState('#6bd1ff')
   const [showingMenu, setShowingMenu] = useState(false)
-  const navRef = useRef<HTMLElement | null>(null)
+  const navRef = useRef<MenuRef | null>(null)
 
   function handleCodeBackground(event: React.FormEvent<HTMLInputElement>) {
     setCodeBackground(event.currentTarget.value)
@@ -15,10 +16,10 @@ export default function CodeEditor() {
   function handleMenu() {
     if (showingMenu) {
       setShowingMenu(false)
-      navRef.current?.classList.remove('show')
+      navRef.current?.hide()
     } else {
       setShowingMenu(true)
-      navRef.current?.classList.add('show')
+      navRef.current?.show()
     }
   }
 
