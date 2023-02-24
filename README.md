@@ -14,6 +14,7 @@ As principais funcionalidades pedidas são:
 ## Minhas adaptações
 - Tela de Login
 - Tela de Cadastro
+- Tela do Usuário
 
 ## Observações
 O foco do projeto é testar as habilidade front-end, então será usado uma fake api através do db.json para simular as requisições a um back-end.
