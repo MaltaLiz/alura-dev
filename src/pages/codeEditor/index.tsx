@@ -3,10 +3,16 @@ import macButtons from 'assets/images/mac_buttons.svg'
 import * as S from './styles'
 import { Header, Menu } from 'components'
 import { MenuRef } from 'components/menu'
+import Highlight from 'react-highlight'
+import 'highlight.js/styles/dracula.css'
 
 export default function CodeEditor() {
   const [codeBackground, setCodeBackground] = useState('#6bd1ff')
   const [showingMenu, setShowingMenu] = useState(false)
+  const [language, setLanguage] = useState('typescript')
+  const [code, setCode] = useState('')
+  const [highlightEnabled, setHighlightEnabled] = useState(false)
+
   const navRef = useRef<MenuRef | null>(null)
 
   function handleCodeBackground(event: React.FormEvent<HTMLInputElement>) {
@@ -23,6 +29,18 @@ export default function CodeEditor() {
     }
   }
 
+  function handleCode(event: React.ChangeEvent<HTMLTextAreaElement>) {
+    setCode(event.target.value)
+  }
+
+  function handleLanguageChange(event: React.ChangeEvent<HTMLSelectElement>) {
+    setLanguage(event.target.value)
+  }
+
+  function handleHighlight() {
+    setHighlightEnabled((prevHighlightEnabled) => !prevHighlightEnabled)
+  }
+
   return (
     <S.Container>
       <Header handleMenu={handleMenu} showingMenu={showingMenu} />
@@ -33,11 +51,20 @@ export default function CodeEditor() {
           style={{ backgroundColor: codeBackground }}
         >
           <div className='postButtons'>
-            <img src={macButtons} />
+            <img src={macButtons} alt='botoes ilustrativos' />
           </div>
-          <textarea className='post' />
+          {highlightEnabled && (
+            <Highlight className={`${language} postHighlight`}>
+              {code}
+            </Highlight>
+          )}
+          {!highlightEnabled && (
+            <textarea className='post' onChange={handleCode} value={code} />
+          )}
         </div>
-        <button className='highlightButton'>Visualizar com o highlight</button>
+        <button className='highlightButton' onClick={handleHighlight}>
+          {highlightEnabled ? 'Editar o código' : 'Visualizar com o highlight'}
+        </button>
       </S.CodeEditor>
       <S.Sidebar>
         <form>
@@ -55,9 +82,26 @@ export default function CodeEditor() {
           <select
             placeholder='Selecione uma linguagem'
             className='codeLanguageSelect'
+            onChange={handleLanguageChange}
           >
-            <option className='codeLanguageOption'>Javascript</option>
-            <option className='codeLanguageOption'>Java</option>
+            <option className='codeLanguageOption' value='typescript'>
+              Typescript
+            </option>
+            <option className='codeLanguageOption' value='javascript'>
+              Javascript
+            </option>
+            <option className='codeLanguageOption' value='html'>
+              HTML
+            </option>
+            <option className='codeLanguageOption' value='css'>
+              CSS
+            </option>
+            <option className='codeLanguageOption' value='java'>
+              Java
+            </option>
+            <option className='codeLanguageOption' value='python'>
+              Python
+            </option>
           </select>
           <input
             type='color'

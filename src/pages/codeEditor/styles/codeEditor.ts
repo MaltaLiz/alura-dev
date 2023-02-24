@@ -7,6 +7,10 @@ export const CodeEditor = styled.div`
   gap: 32px;
   margin-top: 24px;
 
+  pre {
+    margin: 0;
+  }
+
   .postWrapper {
     padding: 32px;
     border-radius: 8px;
@@ -14,19 +18,28 @@ export const CodeEditor = styled.div`
 
   .post {
     resize: none;
+    display: block;
     border-style: none;
     border-end-start-radius: 8px;
     border-end-end-radius: 8px;
-    background-color: ${theme.colors.darkGray};
     width: calc(100% - 32px);
     padding: 16px;
+    background-color: #282a36;
     color: ${theme.colors.white};
-    ${theme.typography.code}
+  }
+
+  .postHighlight {
+    display: block;
+    border-style: none;
+    border-end-start-radius: 8px;
+    border-end-end-radius: 8px;
+    width: calc(100% - 32px);
+    padding: 16px;
   }
 
   .postButtons {
     width: calc(100% - 32px);
-    background-color: ${theme.colors.darkGray};
+    background-color: #282a36;
     padding: 16px;
     border-start-start-radius: 8px;
     border-start-end-radius: 8px;
@@ -53,13 +66,15 @@ export const CodeEditor = styled.div`
   ${theme.breakpoint.mobile} {
     grid-column-start: 1;
     grid-column-end: 4;
-    .post {
+    .post,
+    .postHighlight {
       height: 360px;
     }
   }
 
   ${theme.breakpoint.tablet} {
-    .post {
+    .post,
+    .postHighlight {
       height: 230px;
     }
   }
