@@ -9,7 +9,22 @@ export const Header = styled.header`
   grid-column-end: 4;
 
   ${theme.breakpoint.mobile} {
-    .userName {
+    .signOutButton {
+      background-color: transparent;
+      border-style: none;
+      border-radius: 16px;
+      padding: 8px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: ${theme.buttons.iconButton.background.hover};
+      }
+
+      &:active {
+        background-color: ${theme.buttons.iconButton.background.pressed};
+      }
+    }
+    .signOutButton p {
       display: none;
     }
     .menuButton {
@@ -30,12 +45,23 @@ export const Header = styled.header`
   }
 
   ${theme.breakpoint.desktop} {
-    .userName {
+    .signOutButton p {
+      display: block;
+    }
+    .signOutButton {
+      color: ${theme.colors.white};
       display: flex;
       align-items: center;
       gap: 8px;
-      margin: 0;
       ${theme.typography.body}
+
+      &:hover {
+        background-color: transparent;
+      }
+
+      &:active {
+        background-color: transparent;
+      }
     }
     .menuButton {
       display: none;

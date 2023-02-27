@@ -75,14 +75,6 @@ export const Menu = styled.nav`
       margin-bottom: 24px;
       border-bottom: 1px solid #ffffff;
     }
-
-    .userName {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin: 0;
-      ${theme.typography.body}
-    }
   }
 
   ${theme.breakpoint.desktop} {
@@ -102,9 +94,6 @@ export const Menu = styled.nav`
     display: block;
     .menuList {
       border: none;
-    }
-    .userName {
-      display: none;
     }
   }
 `

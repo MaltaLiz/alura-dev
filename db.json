@@ -1,0 +1,12 @@
+{
+  "logged-user": [],
+  "users": [
+    {
+      "id": 1,
+      "username": "Fulano Da Silva",
+      "email": "fulano@gmail.com",
+      "password": "senha"
+    }
+  ],
+  "posts": []
+}

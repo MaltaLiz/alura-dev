@@ -1,7 +1,7 @@
 import React, { forwardRef, Ref, useImperativeHandle, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import theme from 'theme'
-import { CodeIcon, ComunityIcon, UserIcon } from 'utils/icons'
+import { CodeIcon, ComunityIcon } from 'utils/icons'
 import * as S from './styles'
 
 interface MenuProps
@@ -54,10 +54,6 @@ function Menu({ className }: MenuProps, ref: Ref<MenuRef>) {
           </Link>
         </li>
       </ul>
-      <div className='userName'>
-        <UserIcon size={32} color={theme.colors.white} />
-        <p>Usuário</p>
-      </div>
     </S.Menu>
   )
 }

@@ -16,6 +16,6 @@ export const Container = styled.div`
   }
 
   ${theme.breakpoint.notebook} {
-    padding: 32px;
+    padding: 8px 32px;
   }
 `
