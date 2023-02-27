@@ -18,3 +18,19 @@ As principais funcionalidades pedidas são:
 
 ## Observações
 O foco do projeto é testar as habilidade front-end, então será usado uma fake api através do db.json para simular as requisições a um back-end.
+
+# Como rodar o projeto
+
+A fake api (servidor) deve ser levantada para a aplicação funcionar, após isso basta dar o start na aplicação.
+
+## Servidor
+
+Escrever no terminal o comando
+  - com yarn: yarn server
+  - com npm: npm run server
+ 
+## Aplicação
+
+Escrever no terminal o comando
+  - com yarn: yarn start
+  - com npm: npm start
